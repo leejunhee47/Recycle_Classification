@@ -1,3 +1,4 @@
+# 직접 심층 신경망 구현
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -13,6 +14,7 @@ class PyTorch_Custom_Model_Class(nn.Module):
 class MODEL_From_Scratch(nn.Module):
     def __init__(self, num_classes):
         super().__init__()
+        # 신경망의 입력부터 출력까지 순차적으로 신경망 구조를 작성
         self.classifier = nn.Sequential(
             nn.Conv2d(3, 32, kernel_size = 3, stride = 2, padding = 1)
             , nn.BatchNorm2d(32)
